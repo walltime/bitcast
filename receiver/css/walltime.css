@@ -1,0 +1,113 @@
+/*
+ Colour palette:
+ #0082c7 - blue
+ #64abde - light blue
+ #77c14f - green
+ #2a3236 - black
+ #54646c - light black
+ white   - white
+
+ font sizes:
+ normal - 14pt
+ mono - 12pt
+*/
+
+/* From https://www.google.com/fonts/specimen/Exo
+        https://www.google.com/fonts/specimen/Roboto+Slab
+ */
+
+@font-face {
+    font-family: 'Exo';
+    font-style: italic;
+    font-weight: 600;
+    src: local('Exo SemiBold Italic'), local('Exo-SemiBoldItalic'),
+    url('../resources/exo-semibolditalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'),
+    url('../resources/roboto-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Roboto Slab Bold'), local('RobotoSlab-Bold'),
+    url('../resources/roboto-bold.woff') format('woff');
+}
+
+/* HTML tags */
+
+body {
+    color: #2a3236;
+    background-color: black;
+    margin: auto;
+    text-align: center;
+}
+
+body *::selection {
+    color: #2a3236;
+    background: white;
+}
+
+body *::-moz-selection {
+    color: #2a3236;
+    background: white;
+}
+
+h1 {
+    margin: 10pt;
+}
+
+header {
+    position: absolute;
+    bottom: 20pt;
+    right: 40pt;
+}
+
+/* By IDs */
+
+#logo-image {
+    height: 25pt;
+    opacity:0.3;
+}
+
+#value {
+    width: 600pt;
+    height: 240pt;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -120pt;
+    margin-left: -300pt;
+    /*border: 1px red solid;*/
+}
+
+#time1, #time2 {
+    font-family: monospace;
+}
+
+/* Classes */
+
+.global-font {
+    font-family: 'Roboto Slab', serif;
+    font-size: 14pt;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .5pt;
+    word-spacing: 1pt;
+    line-height: 1;
+}
+
+.big {
+    font-size: 180pt;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 16pt;
+}

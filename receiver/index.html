@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="application-name" content="Bitcast">
+    <meta name="author" content="Walltime">
+    <meta name="description" content="Bitcoin price on Chromecast">
+    <meta name="keywords" content="bitcoin,chromecast">
+
+    <title>Bitcast</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico144.png">
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico114.png">
+
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico72.png">
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="img/ico57.png">
+
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="css/walltime.css" type="text/css" />
+
+    <script type="text/javascript" src="https://www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+    <script type="text/javascript" src="https://d3dy5gmtp8yhk7.cloudfront.net/2.1/pusher.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/date.js"></script>
+    <script type="text/javascript" src="js/bitcast.js"></script>
+
+</head>
+
+<body class="global-font" onload="justLoaded();" onunload="justUnloaded();">
+
+    <header>
+        <h1><img id="logo-image" src="img/logo.svg" alt="Walltime"/></h1>
+    </header>
+
+    <section>
+        <div id="value">
+            <p class="subtitle"><span id="time1">...</span> &ndash; Bitcoin live price</p>
+            <p id="price" class="big">---</p>
+            <p id="subtitle" class="subtitle">Waiting next trade...</p>
+            <p class="subtitle">Last trade: <span id="time2">---</span></p>
+        </div>
+    </section>
+
+</body>
+
+</html>

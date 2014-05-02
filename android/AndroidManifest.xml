@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="info.walltime.bitcast"
+          android:versionCode="1"
+          android:versionName="0.1 beta">
+
+    <uses-sdk
+            android:minSdkVersion="9"
+            android:targetSdkVersion="19" />
+
+    <application android:allowBackup="false"
+                 android:label="@string/app_name"
+                 android:icon="@drawable/icon">
+
+        <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version" />
+
+        <activity android:name="Bitcast"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
