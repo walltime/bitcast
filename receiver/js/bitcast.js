@@ -13,6 +13,8 @@ function justUnloaded() {
 
 }
 
+var SUBTITLE = 'USD / BTC on Bitstamp';
+
 function start() {
     var price = document.getElementById('price');
     var subtitle = document.getElementById('subtitle');
@@ -25,7 +27,7 @@ function start() {
 
     if (lastPrice) {
         price.innerHTML = lastPrice;
-        subtitle.innerHTML = 'USD / mBTC on Bitstamp';
+        subtitle.innerHTML = SUBTITLE;
 
         if (!animating) {
             animating = true;
@@ -52,20 +54,37 @@ function start() {
 
     trades_channel.bind('trade', function(data) {
         if (data && data['price']) {
-            var finalValue = (parseFloat(data['price']) / 1000.0).toFixed(2);
+            var finalValue = (parseFloat(data['price'])).toFixed(2);
             console.log('Price: ' + data['price'] + ' -> ' + finalValue);
 
             price.innerHTML = finalValue;
+            var color;
+            var color2;
+
+            var newValue = parseFloat(finalValue);
+            var oldValue = parseFloat(localStorage['lp']);
+
+            if (newValue < oldValue) {
+                color = '#ff0000';
+                color2 = '#3a3236';
+            } else if (newValue > oldValue) {
+                color = '#00ff00';
+                color2 = '#2a3836';
+            } else {
+                color = 'white';
+                color2 = '#2a3236';
+            }
+
             localStorage['lp'] = finalValue;
             localStorage['lt'] = new Date().toString("hh:mm:ss tt");
 
-            subtitle.innerHTML = 'USD / mBTC on Bitstamp';
+            subtitle.innerHTML = SUBTITLE;
             lastTrade.innerHTML = localStorage['lt'];
 
             if (!animating) {
                 animating = true;
-                value.css('color', 'white');
-                value.animate({ color: '#2a3236' }, 300, function() {
+                value.css('color', color);
+                value.animate({ color: color2 }, 300, function() {
                     animating = false;
                 });
             }
